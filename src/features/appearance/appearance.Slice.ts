@@ -4,12 +4,12 @@ import type { RootState } from "store";
 import { IThemeMode } from "../../utils/types";
 
 // Define a type for the slice state
-interface AppearanceState {
+export interface IAppearanceState {
   themeMode: IThemeMode;
 }
 
 // Define the initial state using that type
-const initialState: AppearanceState = {
+const initialState: IAppearanceState = {
   themeMode: "dark",
 };
 
@@ -24,7 +24,7 @@ export const appearanceSlice = createSlice({
     // Use the PayloadAction type to declare the contents of `action.payload`
     selectTheme: (
       state,
-      action: PayloadAction<AppearanceState["themeMode"]>
+      action: PayloadAction<IAppearanceState["themeMode"]>
     ) => {
       state.themeMode = action.payload;
     },

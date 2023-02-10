@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+// import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "store";
 import { IUser } from "utils/types";
 
@@ -20,7 +20,7 @@ export const usersSlice = createSlice({
   reducers: {},
 });
 
-export const {} = usersSlice.actions;
+// export const {} = usersSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectUsers = (state: RootState) => state.users;

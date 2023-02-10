@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+// import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "store";
 import { IComment } from "utils/types";
 
@@ -20,7 +20,7 @@ export const commentsSlice = createSlice({
   reducers: {},
 });
 
-export const {} = commentsSlice.actions;
+// export const {} = commentsSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectComments = (state: RootState) => state.comments;
