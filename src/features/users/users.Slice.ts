@@ -1,18 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "store";
-
-interface IUser {
-  firstName: string;
-  lastName: string;
-  photo: string;
-  friends?: [];
-  location?: string;
-  occupation?: string;
-  viewedProfile?: number;
-  impressions?: number;
-  status?: "online" | "offline" | "busy" | "reading" | string;
-}
+import { IUser } from "utils/types";
 
 // Define a type for the slice state
 interface IUsersState {

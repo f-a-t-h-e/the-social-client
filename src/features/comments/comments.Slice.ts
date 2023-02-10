@@ -1,15 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "store";
-
-export interface IComment {
-  post: string;
-  author: string;
-  images: string[];
-  reacts: Map<string, string>;
-  content?: string;
-  userReact?: "like" | "love" | "laugh" | "support";
-}
+import { IComment } from "utils/types";
 
 // Define a type for the slice state
 interface ICommentsState {
