@@ -9,13 +9,12 @@ import {
   PAUSE,
   PERSIST,
   PURGE,
-  PersistConfig,
   persistReducer,
 } from "redux-persist";
 import storage from "redux-persist/es/storage";
 import rootReducer from "./rootReducer";
 
-const persistConfig: PersistConfig<any> = {
+const persistConfig = {
   key: "root",
   storage,
   version: 1,
