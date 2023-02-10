@@ -1,3 +1,4 @@
+/* Entities */
 export interface IUser {
   firstName: string;
   lastName: string;
@@ -30,3 +31,6 @@ export interface IComment {
   content?: string;
   userReact?: "like" | "love" | "laugh" | "support";
 }
+
+/* APPEARANCE */
+export type IThemeMode = "light" | "dark";
