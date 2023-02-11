@@ -8,17 +8,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "scenes/homePage";
 import LoginPage from "scenes/loginPage";
 import ProfilePage from "scenes/profilePage";
-import { useSelector } from "react-redux";
-import { RootState } from "store";
-import {
-  IAppearanceState,
-  selectAppearance,
-} from "./features/appearance/appearance.Slice";
+import { selectAppearance } from "./features/appearance/appearance.Slice";
+import { useAppSelector } from "./hooks/useStore";
 
 function App() {
-  const { themeMode } = useSelector<RootState, IAppearanceState>((state) =>
-    selectAppearance(state)
-  );
+  const { themeMode } = useAppSelector((state) => selectAppearance(state));
   const theme = useMemo(
     () => createTheme(themeSettings(themeMode)),
     [themeMode]
