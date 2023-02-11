@@ -5,12 +5,12 @@ import { IComment } from "utils/types";
 
 // Define a type for the slice state
 interface ICommentsState {
-  comments: Map<string, IComment>;
+  comments: { [key: string]: IComment };
 }
 
 // Define the initial state using that type
 const initialState: ICommentsState = {
-  comments: new Map(),
+  comments: {},
 };
 
 export const commentsSlice = createSlice({

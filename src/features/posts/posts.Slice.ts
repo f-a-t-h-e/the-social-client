@@ -5,12 +5,12 @@ import { IPost } from "utils/types";
 
 // Define a type for the slice state
 interface IPostsState {
-  posts: Map<string, IPost>;
+  posts: { [key: string]: IPost };
 }
 
 // Define the initial state using that type
 const initialState: IPostsState = {
-  posts: new Map(),
+  posts: {},
 };
 
 export const postsSlice = createSlice({
@@ -22,18 +22,16 @@ export const postsSlice = createSlice({
       state,
       action: PayloadAction<{ posts: Array<IPost & { _id: string }> }>
     ) => {
-      const posts = new Map<string, IPost>();
       action.payload.posts.forEach((post) => {
-        posts.set(post._id, post);
+        state.posts[post._id] = post;
       });
-      state.posts = posts;
     },
 
     updatePost: (
       state,
       action: PayloadAction<{ post: IPost; _id: string }>
     ) => {
-      state.posts.set(action.payload._id, action.payload.post);
+      state.posts[action.payload._id] = action.payload.post;
     },
   },
 });
